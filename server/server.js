@@ -2,6 +2,7 @@ const http = require('http');
 const express = require('express');
 const cors = require('cors');
 const path = require('path');
+require('dotenv').config();
 
 
 
@@ -13,6 +14,7 @@ class server001 {
         this.app = express();
         this.userPatha = '/api/users';
         this.path = path;
+        this.port = process.env.PORT;
        
 
         this.midelwears();
@@ -38,8 +40,8 @@ class server001 {
    
     liste(){
           
-          this.app.listen(8080, () => {
-            console.log('Running at http://localhost:',8080);
+          this.app.listen(this.port, () => {
+            console.log('Running at http://localhost:',this.port);
           });
     }
 
