@@ -23,7 +23,9 @@ class server001 {
         this.app.use(cors());
         this.app.set('views',this.path.join(__dirname,'../src/views'));
         this.app.set('view engine', 'ejs');
-        this.app.use( express.static(this.path.join(__dirname, '/public')));
+        // this.app.use( express.static(this.path.join(__dirname, 'public')));
+        this.app.use( express.static(('public')));
+
         this.app.use(express.json())
 
     }
